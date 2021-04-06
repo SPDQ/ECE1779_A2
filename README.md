@@ -14,13 +14,16 @@ In the homepage of manager app, there is a list of all the workers with their de
 <br>
 <img src="https://github.com/SPDQ/Face-Mask-Detection-Web-Application/blob/master/doc/manager_list.png" height="300px" width="600px">
 <br>
+<br>
 The application can also monitor the CPU utilization and HTTP requests of each worker. 
 <br>
 <img src="https://github.com/SPDQ/ECE1779_A2/blob/master/doc/manager_cpu.png" height="400px" width="600px">
 <br>
+<br>
 The number of healthy workers in past 30 minutes is also shown in the application. 
 <br>
 <img src="https://github.com/SPDQ/ECE1779_A2/blob/master/doc/manager_wknum.png" height="400px" width="600px">
+<br>
 <br>
 The application has the function of auto-scaling. The configuration of auto-scaler can be set by manager. 
 <br>
