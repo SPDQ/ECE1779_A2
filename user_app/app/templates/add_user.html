@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>add_user</title>
+    <link rel="stylesheet" href="../static/css/w3.css">
+    <style>
+        body {
+            background-color: lightgoldenrodyellow;
+        }
+
+        h1 {
+
+            text-align: center;
+        }
+
+        h2 {
+
+            text-align: center;
+        }
+
+        p {
+            font-family: verdana;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        .button {
+            display: inline-block;
+            border-radius: 4px;
+            background-color: lightblue;
+            border: none;
+            color: #FFFFFF;
+            text-align: center;
+            font-size: 28px;
+            padding: 15px;
+            width: 200px;
+            transition: all 0.5s;
+            cursor: pointer;
+            margin: 5px;
+        }
+
+        .button span {
+            cursor: pointer;
+            display: inline-block;
+            position: relative;
+            transition: 0.5s;
+        }
+
+        .button span:after {
+            content: '\00bb';
+            position: absolute;
+            opacity: 0;
+            top: 0;
+            right: -20px;
+            transition: 0.5s;
+        }
+
+        .button:hover span {
+            padding-right: 25px;
+        }
+
+        .button:hover span:after {
+            opacity: 1;
+            right: 0;
+        }
+
+        a:link,
+        a:visited {
+            background-color: lightgoldenrodyellow;
+        }
+
+        a:hover,
+        a:active {
+            background-color: white;
+        }
+
+        form {
+            text-align: center;
+        }
+
+        input[type=text],
+        input[type=password] {
+            width: 50%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- Sidebar -->
+    <div class="w3-sidebar w3-bar-block w3-border-right" style="display:none" id="mySidebar">
+        <button onclick="w3_close()" class="w3-bar-item w3-large">Close &times;</button>
+        <a href="{{ url_for('user_home') }}" class="w3-bar-item w3-button">User home</a>
+
+    </div>
+    <!-- Page Content -->
+    <div class="w3-teal">
+        <button class="w3-button w3-teal w3-xlarge" onclick="w3_open()">☰</button>
+        <h1>
+            Add New User!
+        </h1>
+    </div>
+
+    {% for message in get_flashed_messages() %}
+    <div style="color:hotpink">{{ message }}</div>
+    {% endfor %}
+    <div class="w3-panel w3-card" style="background-color:white">
+        <form method="post">
+            <br>
+            <label>Username: </label>
+            <input type="text" placeholder="Username" name="username" value="{{ request.form.username }}" required>
+            <br>
+            <label>Password: </label>
+            <input type="password" placeholder="Password" name="password" value="{{ request.form.new_passwd }}"
+                required>
+            <br>
+            <label>Email: </label>
+            <input type="email" placeholder="Email" name="email" value="{{ request.form.email }}" required>
+            <br>
+            <button class="button" style="vertical-align:middle"><span>Submit </span></button>
+        </form>
+    </div>
+    <script>
+        function w3_open() {
+            document.getElementById("mySidebar").style.display = "block";
+        }
+
+        function w3_close() {
+            document.getElementById("mySidebar").style.display = "none";
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+
+{% block head %}
+<title>Auto-Scaler</title>
+<link rel="stylesheet" href="static/css/base.css">
+<link rel="stylesheet" href="static/css/w3.css">
+{% endblock%}
+
+{% block content %}
+<div class="w3-panel w3-card w3-white">
+    <div class="w3-teal w3-container">
+        <h1>Auto scaling configure</h1>
+    </div>
+    <div class="w3-container">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+        {% for category, message in messages %}
+        {% if category == 'success' %}
+        <div class="alert alert-success alert-dismissible" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+                    aria-hidden="true">&times;</span></button>
+            {{ message }}
+        </div>
+        {% else %}
+        <div class="alert alert-danger alert-dismissible" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+                    aria-hidden="true">&times;</span></button>
+            {{ message }}
+        </div>
+        {% endif %}
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
+        <form action="{{url_for('configure_auto_scaling')}}" method="post">
+            {{ form.hidden_tag() }}
+            <div class="form-group row">
+                <label for="cpu_up" class="col-sm-3 col-form-label"> Cpu threshold for growing</label>
+                <div class="col-sm-6">
+                    {{ form.cpu_grow(class="form-control", id="cpu_up", value=values.cpu_grow | int)}}
+                </div>
+                <div class="col-sm-2">
+                    <button class="w3-button w3-teal w3-round-large btn-success" id="configure_btn_1">Configure</button>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="cpu_down" class="col-sm-3 col-form-label"> Cpu threshold for shrinking</label>
+                <div class="col-sm-6">
+                    {{ form.cpu_shrink(class="form-control", id="cpu_down", value=values.cpu_shrink) }}
+                </div>
+                <div class="col-sm-2">
+                    <button class="w3-button w3-teal w3-round-large btn-success" id="configure_btn_2">Configure</button>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="ratio_up" class="col-sm-3 col-form-label">Expand ratio </label>
+                <div class="col-sm-6">
+                    {{ form.ratio_expand(class="form-control", id="ratio_up", value = values.ratio_expand) }}
+                </div>
+                <div class="col-sm-2">
+                    <button class="w3-button w3-teal w3-round-large btn-success" id="configure_btn_3">Configure</button>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="ratio_down" class="col-sm-3 col-form-label">Shrink Ratio </label>
+                <div class="col-sm-6">
+                    {{ form.ratio_shrink(class="form-control", id="ratio_down", value = values.ratio_shrink) }}
+                </div>
+                <div class="col-sm-2">
+                    <button class="w3-button w3-teal w3-round-large btn-success" id="configure_btn_4">Configure</button>
+                </div>
+            </div>
+            {{ form.submit(class="btn btn-primary") }}
+        </form>
+    </div>
+</div>
+{% endblock %}
+
+{% block footer %}
+<script src="static/js/auto_scaling.js"></script>
+{% endblock%}

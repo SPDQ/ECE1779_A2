@@ -1,0 +1,35 @@
+body {
+        background-color: lightgoldenrodyellow;
+}
+
+h1 {
+
+    text-align: center;
+}
+
+h2 {
+
+    text-align: center;
+}
+
+p {
+    font-family: verdana;
+    font-size: 20px;
+    text-align: center;
+}
+
+
+a:link,
+a:visited {
+    background-color: lightgoldenrodyellow;
+}
+
+a:hover,
+a:active {
+    background-color: white;
+}
+
+form {
+    text-align: center;
+}
+

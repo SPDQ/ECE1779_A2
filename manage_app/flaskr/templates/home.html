@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+
+{% block head %}
+<title>Home</title>
+<link rel="stylesheet" href="static/css/base.css">
+<link rel="stylesheet" href="static/css/w3.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
+{% endblock%}
+{% block content %}
+<div class="w3-container">
+    <div class="w3-panel w3-card w3-white">
+        <div class="w3-container w3-teal">
+            <h1>Worker List</h1>
+        </div>
+        <div class="w3-container">
+            <div id="msg"></div>
+            <div class="w3-container">
+                <a href="http://ece1779alb-469250910.us-east-1.elb.amazonaws.com:5000">LoadBalancer DNS: ece1779alb-469250910.us-east-1.elb.amazonaws.com </a>
+            </div>
+            <div class="w3-panel w3-card">
+                <div class="w3-container">
+                    <div class="row" id="chart1"></div>
+                </div>
+            </div>
+            <div class="w3-bar">
+                <button class="w3-button w3-teal w3-round-large" id="worker_btn">Worker Chart</button>
+                <button class="w3-button w3-teal w3-round-large" id="details_btn">Details</button>
+                <button class="w3-button w3-teal w3-round-large" id="refresh_btn">Refresh</button>
+                <button class="w3-button w3-teal w3-round-large" id="add_btn">Add</button>
+                <button class="w3-button w3-teal w3-round-large" id="shrink_btn">Delete</button>
+                <button class="w3-button w3-red w3-round-large w3-right" id="stop_btn">Stop Manager</button>
+                <button class="w3-button w3-red w3-round-large w3-right" id="delete_btn">Delete All</button>
+            </div>
+            <br><br>
+            <table id="worker_table" class="display"style="width:100%">
+                <thead>
+                    <tr>
+
+                        <th>Instance ID</th>
+                        <th>Port</th>
+                        <th>State</th>
+                        <th>Monitor</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+    <div class="w3-panel w3-card w3-white">
+        <div class="w3-container">
+            <div class="row" id="chart2"></div>
+            <div class="row" id="chart3"></div>
+        </div>
+    </div>
+
+</div>
+{% endblock%}
+
+{% block footer %}
+<script src="static/js/home.js"></script>
+<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+<script src="https://code.highcharts.com/stock/highstock.js"></script>
+<script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/stock/modules/export-data.js"></script>
+{% endblock%}
