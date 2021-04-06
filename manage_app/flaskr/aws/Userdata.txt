@@ -1,7 +1,0 @@
-#!/bin/bash
-cd /
-cd /home/ubuntu/Desktop
-chmod u+x *.sh
-echo 'Hello' > test.txt
-./start.sh
-echo 'Bye~' > test.txt
