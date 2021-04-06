@@ -12,7 +12,7 @@ This application is developed for a manager to control the amount of resources o
 <br>
 In the homepage of manager app, there is a list of all the workers with their detail.
 <br>
-<img src="https://github.com/SPDQ/Face-Mask-Detection-Web-Application/blob/master/doc/manager_list.png" height="400px" width="600px">
+<img src="https://github.com/SPDQ/Face-Mask-Detection-Web-Application/blob/master/doc/manager_list.png" height="300px" width="600px">
 <br>
 The application can also monitor the CPU utilization and HTTP requests of each worker. 
 <br>
@@ -24,5 +24,5 @@ The number of healthy workers in past 30 minutes is also shown in the applicatio
 <br>
 The application has the function of auto-scaling. The configuration of auto-scaler can be set by manager. 
 <br>
-<img src="https://github.com/SPDQ/ECE1779_A2/blob/master/doc/auto_scaler_config.png" height="350px" width="600px">
+<img src="https://github.com/SPDQ/ECE1779_A2/blob/master/doc/auto_scaler_config.png" height="320px" width="600px">
 <br>
