@@ -23,5 +23,5 @@ The number of healthy workers in past 30 minutes is also shown in the applicatio
 <br>
 The application has the function of auto-scaling. The configuration of auto-scaler can be set by manager. 
 <br>
-<img src="https://github.com/SPDQ/ECE1779_A2/blob/master/doc/auto_scaler_config.png" height="400px" width="600px">
+<img src="https://github.com/SPDQ/ECE1779_A2/blob/master/doc/auto_scaler_config.png" height="400px" width="550px">
 <br>
